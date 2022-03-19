@@ -1,13 +1,120 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --main-color: #758a96;
+  --second-color: #d3d6c7;
+  --third-color: #5f653d;
+  --main-darker: #3d5461;
+  --lightest-color: #fff;
+  --darkest-color: #191e22;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--lightest-color);
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+}
+a, button, img { transition: all 0.5s ease-out; }
+a { text-decoration: none; color: var(--main-color); }
+a:hover { color: var(--third-color); }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.content {
+  flex: 1;
+}
+
+
+/* H TAGS */
+h1, h4, h5 {
+    font-family: 'Hammersmith One', sans-serif;
+    text-transform: uppercase;
+    font-weight: normal;
+    line-height: 1;
+}
+h2, h3 {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: normal;
+}
+
+
+/* HEADER */
+header {
+  background-color: var(--main-color);
+  background-image: url("assets/images/header.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  text-shadow: 1px 1px 1px var(--darkest-color);
+  text-align: center;
+}
+.title {
+  width: 100%;
+  margin: 50px auto 150px;
+  order: 2;
+}
+.title h1 {
+  color: var(--lightest-color);
+  font-size: 5.4vw;
+  margin: 0 auto;
+  letter-spacing: -2px;
+}
+.title h1 a, .title h1 a:hover {
+  color: var(--lightest-color);
+}
+.title h2 {
+  color: var(--lightest-color);
+  text-transform: lowercase;
+  font-size: 2vw;
+  line-height: 1;
+}
+nav {
+  width: 100%;
+  margin: 50px auto;
+  text-transform: uppercase;
+}
+nav ul li {
+  display: inline-block;
+  margin: 10px;
+  font-family: 'Hammersmith One', sans-serif;
+  font-size: 20px;
+}
+nav ul li a {
+  padding: 5px 10px 3px;
+  color: var(--lightest-color);
+}
+nav ul li a:hover {
+  color: var(--lightest-color);
+  background-color: var(--main-color);
+}
+
+
+/* FOOTER */
+footer {
+  background-color: var(--main-darker);
+  padding: 25px;
+  text-align: center;
+  font-family: 'Libre Baskerville', serif;
+}
+footer a {
+  color: var(--second-color);
+  text-decoration: none;
+}
+footer a:hover { color: var(--lightest-color); }
+footer ul li {
+  display: inline-block;
+  margin: 0;
+  color: var(--lightest-color);
+}
+.foot-info ul li:not(:last-child)::after {
+  content: " \2022 ";
+  font-size: 0.8em;
 }
