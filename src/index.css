@@ -18,7 +18,7 @@ body {
   font-family: 'Lato', Helvetica, Arial, sans-serif;
   font-size: 16px;
 }
-a, button, img { transition: all 0.5s ease-out; }
+a, button, img, span { transition: all 0.5s ease-out; }
 a { text-decoration: none; color: var(--main-color); }
 a:hover { color: var(--third-color); }
 
@@ -63,7 +63,7 @@ header {
 }
 .title h1 {
   color: var(--lightest-color);
-  font-size: 5.4vw;
+  font-size: 5.5em;
   margin: 0 auto;
   letter-spacing: -2px;
 }
@@ -73,7 +73,7 @@ header {
 .title h2 {
   color: var(--lightest-color);
   text-transform: lowercase;
-  font-size: 2vw;
+  font-size: 1.6em;
   line-height: 1;
 }
 nav {
@@ -87,13 +87,135 @@ nav ul li {
   font-family: 'Hammersmith One', sans-serif;
   font-size: 20px;
 }
-nav ul li a {
+nav ul li span {
   padding: 5px 10px 3px;
   color: var(--lightest-color);
 }
-nav ul li a:hover {
+nav ul li span:hover, nav ul li span.active {
   color: var(--lightest-color);
   background-color: var(--main-color);
+}
+nav ul li span:hover {
+  cursor: pointer;
+}
+nav ul li span.active:hover {
+  cursor: default;
+}
+
+
+/* SECTIONS */
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 1220px; max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+section:not(:last-child) {
+  border-bottom: 1px solid var(--second-color);
+}
+section h3 {
+  font-size: 32px;
+  color: var(--main-darker);
+  margin: 10px;
+  width: calc(100% - 20px);
+}
+
+
+/* ABOUT */
+.about-me { padding: 0 20px; }
+.main-content {
+  width: 980px; max-width: calc(80% - 20px);
+  padding: 10px;
+}
+.main-content p {
+  padding: 10px;
+}
+
+/* ABOUT SIDE INFO */
+.quick-info {
+  width: 980px; max-width: calc(80% - 20px);
+  text-align: center;
+  display: flex;
+}
+.quick-info img {
+  width: 100%;
+  border-radius: 50%;
+  border: 10px solid var(--second-color);
+}
+.self-image {
+  margin: -100px 0 0;
+  width: 180px;
+}
+.info-box {
+  color: var(--main-color);
+  margin: 25px 0;
+  flex: 1;
+}
+.info-box h4 {
+  font-size: 28px;
+}
+.info-box p {
+  font-family: 'Libre Baskerville', serif;
+  line-height: 1;
+  font-size: 18px;
+}
+p.about-text {
+  color:var(--third-color);
+  padding: 0 0 40px;
+}
+.self-image::after {
+  content: "";
+  display: block;
+  background-image: url("assets/images/leaf-blue.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 54px;
+  margin: -28px 0 20px;
+  z-index: 9;
+  position: relative;
+}
+p.about-text::before {
+  content: "";
+  display: block;
+  background-image: url("assets/images/leaf-beige.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 34px;
+  margin: 10px 0 20px;
+}
+.quick-skills {
+  text-align: center;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 5px;
+  margin: 10px 10px 0;
+}
+.quick-skills li {
+  background-color: var(--main-darker);
+  color: var(--lightest-color);
+  flex: 1;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px 0;
+  font-weight: bold;
+}
+.quick-skills li:nth-child(3n - 1) {
+  background-color: var(--third-color);
+}
+.quick-skills li:nth-child(3n) {
+  background-color: var(--second-color);
+  color: var(--main-darker);
+  text-shadow: 1px 1px rgba(255,255,255,.5);
 }
 
 
@@ -117,4 +239,30 @@ footer ul li {
 .foot-info ul li:not(:last-child)::after {
   content: " \2022 ";
   font-size: 0.8em;
+}
+
+
+/* ADDITIONAL STYLING */
+::-moz-selection {
+  color: var(--lightest-color);
+  background: var(--main-darker);
+}
+::selection {
+  color: var(--lightest-color);
+  background: var(--main-darker);
+}
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--lightest-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--second-color);
+  border-radius: 5px;
+  border: 1px solid var(--lightest-color);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--second-color);
 }
