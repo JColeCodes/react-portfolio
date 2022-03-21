@@ -18,7 +18,7 @@ body {
   font-family: 'Lato', Helvetica, Arial, sans-serif;
   font-size: 16px;
 }
-a, button, img, span { transition: all 0.5s ease-out; }
+a, button, img, span, li, div, i, h4 { transition: all 0.5s ease-out; }
 a { text-decoration: none; color: var(--main-color); }
 a:hover { color: var(--third-color); }
 
@@ -126,7 +126,6 @@ section h3 {
 /* ABOUT */
 .about-me { padding: 0 20px; }
 .main-content {
-  width: 980px; max-width: calc(80% - 20px);
   padding: 10px;
 }
 .main-content p {
@@ -135,7 +134,6 @@ section h3 {
 
 /* ABOUT SIDE INFO */
 .quick-info {
-  width: 980px; max-width: calc(80% - 20px);
   text-align: center;
   display: flex;
 }
@@ -216,6 +214,89 @@ p.about-text::before {
   background-color: var(--second-color);
   color: var(--main-darker);
   text-shadow: 1px 1px rgba(255,255,255,.5);
+}
+.quick-skills li:hover {
+  border-radius: 0 20px;
+}
+
+
+/* PORTFOLIO */
+.portfolio-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.portfolio-boxes a {
+  color: var(--lightest-color);
+  text-decoration: none;
+}
+.portfolio-box {
+  opacity: 1;
+  margin: 5px;
+  width: calc(50% - 10px);
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--second-color);
+}
+.portfolio-box img {
+  position: absolute;
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+.portfolio-text {
+  /* background: linear-gradient(rgba(117,138,150,0), rgba(117,138,150,0), rgba(117,138,150,1)); */
+  background-color: rgba(255,255,255,0);
+  position: absolute;
+  left: -100%;
+  bottom: 0;
+  padding: 30px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  outline-offset: -6px;
+  outline: 1px solid var(--main-color);
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+.portfolio-text h4 {
+  font-size: 2.5em;
+  text-transform: none;
+  color: var(--main-darker);
+}
+.portfolio-text h4 i {
+  color: var(--third-color)
+}
+.portfolio-text h4 i:hover {
+  color: var(--main-color);
+}
+.portfolio-text p {
+  display: block;
+  margin: 8px 0 0;
+  font-family: 'Libre Baskerville', serif;
+}
+.portfolio-text p span {
+  background-color: var(--lightest-color);
+  color: var(--main-color);
+  padding: 5px 7px;
+  margin: 2px;
+  display: inline-block;
+  border-radius: 10px 0;
+}
+.portfolio-text p span {
+  cursor: default;
+}
+
+.portfolio-box:hover {
+  transform: scale(1.03);
+}
+.portfolio-box:hover .portfolio-text {
+  background-color: rgba(255,255,255,.75);
+  left: 0;
 }
 
 
