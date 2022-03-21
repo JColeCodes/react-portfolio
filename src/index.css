@@ -88,19 +88,16 @@ nav ul li {
   font-family: 'Hammersmith One', sans-serif;
   font-size: 20px;
 }
-nav ul li span {
+nav ul li a {
   padding: 5px 10px 3px;
   color: var(--lightest-color);
 }
-nav ul li span:hover, nav ul li span.active {
+nav ul li a:hover, nav ul li a.active {
   color: var(--lightest-color);
   background-color: var(--main-color);
 }
-nav ul li span:hover {
-  cursor: pointer;
-}
-nav ul li span.active:hover {
-  cursor: default;
+nav ul li a.active {
+  pointer-events: none;
 }
 
 

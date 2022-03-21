@@ -1,7 +1,7 @@
 import React from 'react';
 import Navigation from '../Navigation';
 
-function Header() {
+function Header({ pages }) {
     return(
         <header>
             {/* Site Title */}
@@ -10,7 +10,7 @@ function Header() {
                 <h2>Web. Graphic. Design.</h2>
             </div>
             {/* Site Navigation */}
-            <Navigation />
+            <Navigation pages={pages} />
         </header>
     );
 }

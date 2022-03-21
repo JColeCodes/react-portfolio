@@ -1,13 +1,20 @@
 import React from 'react';
 
-function Navigation() {
+function isActive(path, title) {
+    if (window.location.pathname === path) {
+        return <li key={title}><a href={path} className="active">{title}</a></li>
+    } else {
+        return <li key={title}><a href={path}>{title}</a></li>
+    }
+}
+
+function Navigation({ pages }) {
     return(
         <nav>
             <ul>
-                <li><span className="active">About</span></li>
-                <li><span>Portfolio</span></li>
-                <li><span>Contact</span></li>
-                <li><span>Resume</span></li>
+                {pages.map(page => (
+                    isActive(page.path, page.title)
+                ))}
             </ul>
         </nav>
     );

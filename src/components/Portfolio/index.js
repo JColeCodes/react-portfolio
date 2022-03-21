@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Portfolio({ projects }) {
+function Portfolio({ projects, page_title }) {
     return(
         <section className="portfolio-boxes">
-            <h3>Portfolio</h3>
+            <h3>{page_title}</h3>
             {projects.map(project => (
                 <div className="portfolio-box" key={project.title}>
                     <img src={require(`../../assets/images/portfolio/${project.thumbnail}`)} alt={`${project.title}`} />
