@@ -42,6 +42,7 @@ h1, h4, h5 {
 h2, h3 {
     font-family: 'Libre Baskerville', serif;
     font-weight: normal;
+    font-style: italic;
 }
 
 
@@ -158,6 +159,7 @@ section h3 {
   font-family: 'Libre Baskerville', serif;
   line-height: 1;
   font-size: 18px;
+  font-style: italic;
 }
 p.about-text {
   color:var(--third-color);
@@ -246,38 +248,53 @@ p.about-text::before {
   object-fit: cover;
   aspect-ratio: 16 / 9;
 }
+.portfolio-overlay {
+  background-color: rgba(255,255,255,0);
+  position: absolute;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  outline-offset: -6px;
+  outline: 1px solid var(--main-color);
+  opacity: 0;
+}
 
 .portfolio-text {
-  /* background: linear-gradient(rgba(117,138,150,0), rgba(117,138,150,0), rgba(117,138,150,1)); */
-  background-color: rgba(255,255,255,0);
   position: absolute;
   left: -100%;
   bottom: 0;
   padding: 30px;
   width: 100%;
   aspect-ratio: 16 / 9;
-  outline-offset: -6px;
-  outline: 1px solid var(--main-color);
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: center;
+  text-shadow: 1px 1px 1px var(--lightest-color);
 }
 .portfolio-text h4 {
   font-size: 2.5em;
   text-transform: none;
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+}
+.portfolio-text h4 a {
   color: var(--main-darker);
 }
-.portfolio-text h4 i {
+.portfolio-text h4 a:hover {
+  color: var(--main-color);
+}
+.portfolio-text h4 i.gh-link {
+  margin: 0 0 0 10px;
   color: var(--third-color)
 }
-.portfolio-text h4 i:hover {
+.portfolio-text h4 i.gh-link:hover {
   color: var(--main-color);
 }
 .portfolio-text p {
   display: block;
   margin: 8px 0 0;
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Hammersmith One', sans-serif;
+  text-transform: uppercase;
 }
 .portfolio-text p span {
   background-color: var(--lightest-color);
@@ -295,8 +312,15 @@ p.about-text::before {
   transform: scale(1.03);
 }
 .portfolio-box:hover .portfolio-text {
-  background-color: rgba(255,255,255,.75);
   left: 0;
+}
+.portfolio-box:hover .portfolio-overlay {
+  background-color: rgba(255,255,255,.75);
+  opacity: 1;
+}
+.portfolio-box:hover img {
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
 }
 
 
@@ -306,6 +330,7 @@ footer {
   padding: 25px;
   text-align: center;
   font-family: 'Libre Baskerville', serif;
+  font-style: italic;
 }
 footer a {
   color: var(--second-color);
@@ -346,4 +371,175 @@ footer ul li {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--second-color);
+}
+
+
+/* RESPONSIVE */
+/* 1280 */
+@media screen and (max-width: 1280px) {
+  nav ul li {
+      font-size: 24px;
+  }
+}
+
+/* 920 */
+@media screen and (max-width: 920px) {
+  .portfolio-text h4 {
+    font-size: 2em;
+  }
+  .portfolio-text p {
+    font-size: .9em;
+  }
+  .portfolio-text p span {
+    padding: 3px 5px;
+  }
+}
+
+/* 800 */
+@media screen and (max-width: 800px) {
+  body {
+      font-size: 18px;
+  }
+  .title {
+      margin: 30px auto 100px;
+  }
+  .main-content {
+      max-width: calc(100% - 20px);
+  }
+  .self-image {
+    margin: -50px 0 0;
+    width: 150px;
+  }
+  .portfolio-text {
+    padding: 20px;
+  }
+  .portfolio-text h4 {
+    font-size: 1.7em;
+  }
+  .portfolio-text h4 i.gh-link {
+    margin: 0 0 0 5px;
+  }
+  .contact-links {
+      text-align: center;
+      width: calc(50% - 10px);
+      padding: 5px;
+  }
+  .contact-links:first-of-type { width: calc(100% - 10px); }
+  .contact-links ul li:first-of-type {
+      padding-top: 15px;
+  }
+  footer ul li {
+      display: block;
+      padding: 5px 0;
+  }
+  .foot-info ul li:not(:last-child)::after {
+      display: none;
+  }
+}
+
+/* 740 */
+@media screen and (max-width: 740px) {
+  .portfolio-box {
+    width: calc(100% - 10px);
+  }
+  .quick-skills li {
+    flex: 1 33%;
+  }
+}
+
+/* 740 to 500 */
+@media screen and (max-width: 740px) and (min-width: 500px) {
+  .portfolio-text h4 {
+    font-size: 2.2em;
+  }
+  .portfolio-text {
+    padding: 30px;
+  }
+  .portfolio-text p {
+    font-size: 1em;
+  }
+  .portfolio-box {
+    width: calc(100% - 10px);
+  }
+}
+
+/* 600 */
+@media screen and (max-width: 600px) {
+  nav {
+      margin: 30px auto;
+  }
+  .title {
+      margin: 20px auto 80px;
+  }
+  .title h1 {
+    font-size: 3.5em;
+  }
+  .title h2 {
+    font-size: 1.3em;
+  }
+  .quick-info {
+    display: grid;
+  }
+  .self-image {
+    margin: 15px 10px 0 0;
+    grid-row: 1 / 3;
+  }
+  .info-box {
+    margin: 15px 0;
+  }
+  #info-1 { grid-column: 2; }
+  #info-2 { grid-column: 3; }
+  #info-3 { grid-row: 2; grid-column: 2 / 4; margin-top: 0; }
+}
+
+/* 500 */
+@media screen and (max-width: 500px) {
+  .portfolio-text {
+    padding: 15px;
+  }
+  .portfolio-text h4 {
+    font-size: 1.6em;
+  }
+  .portfolio-text p {
+    font-size: .8em;
+  }
+  .portfolio-text p span {
+    padding: 3px 5px;
+  }
+}
+
+/* 400 */
+@media screen and (max-width: 400px) {
+  .quick-info {
+    display: block;
+    order: 2;
+  }
+  .self-image {
+    margin: 10px 70px 0;
+    width: calc(100% - 140px);
+  }
+  .info-box {
+    margin: 10px 0;
+    display: inline-block;
+    padding: 0 10px 10px;
+  }
+  .info-box:not(:last-child) {
+    border-bottom: 1px solid var(--second-color);
+  }
+  .contact-links {
+      width: calc(100% - 10px);
+  }
+}
+
+/* 360 */
+@media screen and (max-width: 360px) {
+  .quick-skills li {
+    flex: 1 100%;
+  }
+  .portfolio-text h4 {
+    font-size: 1.2em;
+  }
+  .portfolio-text p {
+    font-size: .7em;
+  }
 }

@@ -14,8 +14,8 @@ function About() {
                 <div className="self-image">
                     <img src={jcface} alt="Jennifer Cole" />
                 </div>
-                {quickInfo.map(info => (
-                    <div className="info-box">
+                {quickInfo.map((info, i) => (
+                    <div className="info-box" id={`info-${i + 1}`} key={`info-${i + 1}`}>
                     <h4>{info.title}</h4>
                     <p>{info.subtitle}</p>
                     </div>
@@ -31,7 +31,7 @@ function About() {
                 </p>
                 <ul className="quick-skills">
                     {quickSkills.map(skill => (
-                        <li>{skill}</li>
+                        <li key={skill}>{skill}</li>
                     ))}
                 </ul>
             </div>
