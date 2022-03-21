@@ -114,10 +114,13 @@ section:not(:last-child) {
   border-bottom: 1px solid var(--second-color);
 }
 section h3 {
-  font-size: 32px;
+  font-size: 2.6em;
   color: var(--main-darker);
-  margin: 10px;
+  margin: 0 10px 10px;
   width: calc(100% - 20px);
+}
+section.about-me h3 {
+  font-size: 2.1em;
 }
 
 
@@ -329,19 +332,45 @@ footer {
   font-family: 'Libre Baskerville', serif;
   font-style: italic;
 }
-footer a {
+footer a, footer button {
   color: var(--second-color);
   text-decoration: none;
+  background: none;
+  border: none;
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+  font-size: 1em;
 }
-footer a:hover { color: var(--lightest-color); }
+footer a:hover, footer button:hover { 
+  color: var(--lightest-color);
+  cursor: pointer;
+}
 footer ul li {
   display: inline-block;
   margin: 0;
   color: var(--lightest-color);
 }
+footer ul li i {
+  margin-left: 8px;
+}
+footer .socials {
+  font-size: 2em;
+  margin: 0 0 10px;
+}
+footer .socials i {
+  margin: 0 5px;
+}
+footer .socials a {
+  color: var(--lightest-color);
+}
+footer .socials a:hover { 
+  opacity: 0.7;
+}
 .foot-info ul li:not(:last-child)::after {
   content: " \2022 ";
   font-size: 0.8em;
+  margin-left: 5px;
+  color: var(--main-color)
 }
 
 
@@ -428,6 +457,9 @@ footer ul li {
   footer ul li {
       display: block;
       padding: 5px 0;
+  }
+  footer i {
+    margin-left: 0;
   }
   .foot-info ul li:not(:last-child)::after {
       display: none;
