@@ -1,38 +1,61 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
+
 import Header from './components/Header';
 import Footer from './components/Footer';
 import About from './components/About';
 import Portfolio from './components/Portfolio';
 import Resume from './components/Resume';
+
 import { projectInfo } from './assets/project-info';
 
-function App() {
+function Template() {
   const pages = [
-    { path: '/', page: 'about', title: 'About' },
-    { path: '/portfolio', page: 'portfolio', title: 'Portfolio' },
-    { path: '/contact', page: 'contact', title: 'Contact' },
-    { path: '/resume', page: 'resume', title: 'Resume' }
+    { path: '/', title: 'About', Element: About },
+    { path: '/portfolio', title: 'Portfolio', Element: Portfolio },
+    { path: '/contact', title: 'Contact', Element: Resume },
+    { path: '/resume', title: 'Resume', Element: Resume }
   ];
-  return (
+  const location = useLocation();
+  
+  return(
     <div className="container">
-      <BrowserRouter>
-        {/* Header */}
-        <Header pages={pages} />
+      {/* Header */}
+      <Header pages={pages} />
 
-        {/* Content */}
-        <div className="content">
-          <Routes>
-            <Route path={pages[0].path} element={<About />} />
-            <Route path={pages[1].path} element={<Portfolio projects={projectInfo} page_title={pages[1].title} />} />
-            <Route path={pages[3].path} element={<Resume page_title={pages[3].title} />} />
-          </Routes>
-        </div>
+      {/* Content */}
+      <div className="content">
+          <TransitionGroup component={null}>
+            <CSSTransition
+              key={location.key}
+              classNames="slide"
+              timeout={800}
+            >
+              <Routes location={location}>
+                {pages.map(({path, title, Element}) => (
+                  <Route
+                    key={title}
+                    path={path}
+                    element={<Element projects={projectInfo} title={title} />}
+                  />
+              ))}
+              </Routes>
+            </CSSTransition>
+          </TransitionGroup>
+      </div>
 
-        {/* Footer */}
-        <Footer />
-      </BrowserRouter>
+      {/* Footer */}
+      <Footer />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Template />
+    </BrowserRouter>
   );
 }
 

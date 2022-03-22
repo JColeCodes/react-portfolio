@@ -17,6 +17,7 @@ body {
   background-color: var(--lightest-color);
   font-family: 'Lato', Helvetica, Arial, sans-serif;
   font-size: 16px;
+  overflow-x: hidden;
 }
 a, button, img, span, li, div, i, h4 { transition: all 0.5s ease-out; }
 a { text-decoration: none; color: var(--main-color); }
@@ -29,6 +30,7 @@ a:hover { color: var(--third-color); }
 }
 .content {
   flex: 1;
+  position: relative;
 }
 
 
@@ -109,9 +111,7 @@ section {
   width: 1220px; max-width: 100%;
   margin: 0 auto;
   padding: 20px;
-}
-section:not(:last-child) {
-  border-bottom: 1px solid var(--second-color);
+  background-color: var(--lightest-color);
 }
 section h3 {
   font-size: 2.6em;
@@ -397,6 +397,27 @@ footer .socials a:hover {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--second-color);
+}
+
+
+/* PAGE TRANSITIONS */
+.slide-enter {
+  transform: translateX(100%);
+}
+.slide-enter-active {
+  transition: all 800ms;
+  transform: translateX(0);
+}
+.slide-exit {
+  transform: translateX(0);
+}
+.slide-exit-active {
+  transform: translateX(-100%);
+  transition: all 800ms;
+}
+.slide-enter-active, .slide-exit-active {
+  position: absolute;
+  top: 0; left: 0;
 }
 
 

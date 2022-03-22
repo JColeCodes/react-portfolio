@@ -1,19 +1,19 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-function isActive(path, title) {
+function isActive(path) {
     if (window.location.pathname === path) {
-        return <li key={title}><a href={path} className="active">{title}</a></li>
-    } else {
-        return <li key={title}><a href={path}>{title}</a></li>
+        return "active";
     }
+    return "";
 }
 
 function Navigation({ pages }) {
     return(
         <nav>
             <ul>
-                {pages.map(page => (
-                    isActive(page.path, page.title)
+                {pages.map(({title, path}) => (
+                    <li key={title}><NavLink key={title} to={path} className={isActive(path)}>{title}</NavLink></li>
                 ))}
             </ul>
         </nav>
