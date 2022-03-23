@@ -58,11 +58,14 @@ header {
   flex-wrap: wrap;
   text-shadow: 1px 1px 1px var(--darkest-color);
   text-align: center;
+  overflow: hidden;
+  position: relative;
 }
 .title {
   width: 100%;
   margin: 50px auto 150px;
   order: 2;
+  z-index: 1;
 }
 .title h1 {
   color: var(--lightest-color);
@@ -83,6 +86,7 @@ nav {
   width: 100%;
   margin: 50px auto;
   text-transform: uppercase;
+  z-index: 1;
 }
 nav ul li {
   display: inline-block;
@@ -101,6 +105,51 @@ nav ul li a:hover, nav ul li a.active {
 nav ul li a.active {
   pointer-events: none;
 }
+header .light-base {
+  position: absolute;
+  animation: light-move 30s linear infinite;
+  width: 800px;
+  height: 800px;
+  mix-blend-mode: overlay;
+  top: 0; left: calc(50% - 400px);
+}
+header .light {
+  opacity: .8;
+  border-radius: 50%;
+  width: 400px; height: 400px;
+  filter: blur(150px);
+  position: absolute;
+  display: block;
+}
+header .light-blue {
+  background-color: var(--main-color);
+  top: 0; left: 0;
+}
+header .light-beige {
+  background-color: var(--second-color);
+  bottom: 0; right: 0;
+}
+@keyframes light-move {
+  0% { transform: scale(1.2) rotate(0deg); }
+  50% { transform: scale(1) rotate(180deg); }
+  100% { transform: scale(1.2) rotate(360deg); }
+}
+.small-light {
+  position: absolute;
+  color: var(--lightest-color);
+  text-shadow: none;
+  filter: blur(2px);
+}
+#small-lights {
+  position: relative;
+  width: 100%;
+  animation: small-lights-move 45s linear infinite;
+}
+@keyframes small-lights-move {
+  0% { top: 20vh; opacity: 0; }
+  50% { opacity: .9; transform: scale(1.2); }
+  100% { top: -30vh; opacity: 0; }
+}
 
 
 /* SECTIONS */
@@ -111,16 +160,20 @@ section {
   width: 1220px; max-width: 100%;
   margin: 0 auto;
   padding: 20px;
-  background-color: var(--lightest-color);
 }
 section h3 {
   font-size: 2.6em;
-  color: var(--main-darker);
+  color: var(--main-color);
   margin: 0 10px 10px;
   width: calc(100% - 20px);
 }
 section.about-me h3 {
   font-size: 2.1em;
+  color: var(--main-darker);
+}
+.wide {
+  width: 100%;
+  background-color: var(--lightest-color);
 }
 
 
@@ -320,7 +373,6 @@ p.about-text::before {
 }
 .portfolio-box:hover img {
   filter: blur(2px);
-  -webkit-filter: blur(2px);
 }
 
 
@@ -401,21 +453,19 @@ footer .socials a:hover {
 
 
 /* PAGE TRANSITIONS */
-.slide-enter {
+.slide-enter { 
+  transition: all 800ms;
   transform: translateX(100%);
 }
-.slide-enter-active {
+.slide-enter-active, .slide-exit {
   transition: all 800ms;
-  transform: translateX(0);
-}
-.slide-exit {
   transform: translateX(0);
 }
 .slide-exit-active {
   transform: translateX(-100%);
   transition: all 800ms;
 }
-.slide-enter-active, .slide-exit-active {
+.slide-enter-active, .slide-exit-active{
   position: absolute;
   top: 0; left: 0;
 }
@@ -560,6 +610,9 @@ footer .socials a:hover {
 
 /* 400 */
 @media screen and (max-width: 400px) {
+  section.about-me h3 {
+    margin-top: 20px;
+  }
   .quick-info {
     display: block;
     order: 2;

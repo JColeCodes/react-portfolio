@@ -29,7 +29,7 @@ function Template() {
           <TransitionGroup component={null}>
             <CSSTransition
               key={location.key}
-              classNames="slide"
+              classNames={'slide'}
               timeout={800}
             >
               <Routes location={location}>
@@ -37,7 +37,11 @@ function Template() {
                   <Route
                     key={title}
                     path={path}
-                    element={<Element projects={projectInfo} title={title} />}
+                    element={
+                      <div className="wide">
+                      <Element projects={projectInfo} title={title} />
+                      </div>
+                    }
                   />
               ))}
               </Routes>
