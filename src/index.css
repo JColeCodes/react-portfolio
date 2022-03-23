@@ -3,6 +3,7 @@
   --second-color: #d3d6c7;
   --third-color: #5f653d;
   --main-darker: #3d5461;
+  --second-lighter: #f1f2eb;
   --lightest-color: #fff;
   --darkest-color: #191e22;
 }
@@ -22,6 +23,7 @@ body {
 a, button, img, span, li, div, i, h4 { transition: all 0.5s ease-out; }
 a { text-decoration: none; color: var(--main-color); }
 a:hover { color: var(--third-color); }
+button:hover { cursor: pointer; }
 
 .container {
   display: flex;
@@ -376,6 +378,90 @@ p.about-text::before {
 }
 
 
+/* RESUME */
+.resume {
+  display: flex;
+  flex-wrap: wrap;
+}
+.resume .sidebar {
+  list-style-type: none;
+  align-self: flex-start;
+  position: sticky;
+  top: 0;
+  padding: 10px 50px 0 0;
+  margin: -10px 0 0;
+}
+.resume .sidebar li {
+  padding: 0 5px 15px;
+}
+.resume .sidebar button {
+  text-transform: capitalize;
+  background: none;
+  border: none;
+  font-size: 1em;
+  padding: 0 0 3px;
+  font-weight: bold;
+  color: var(--main-darker);
+  border-bottom: 5px solid var(--second-color);
+}
+.resume .content {
+  flex-grow: 1;
+  text-align: center;
+}
+.resume .content h4 {
+  font-family: 'Hammersmith One', sans-serif;
+  text-transform: capitalize;
+  font-size: 2em;
+  padding: 5px 0 ;
+  margin-top: -10px;
+  color: var(--main-darker);
+  text-align: left;
+}
+.resume .content h4:not(:first-child) { margin-top: 5px; }
+.resume .content div {
+  background-color: rgba(241,242,235,.2);
+  border: 1px solid var(--second-lighter);
+  padding: 15px;
+  margin: 0 0 8px;
+  border-radius: 0 25px;
+  text-align: left;
+}
+.resume .content h5 { 
+  background-color: var(--main-color);
+  display: inline-block;
+  padding: 8px 8px 6px;
+  color: var(--lightest-color);
+  border-radius: 10px 0;
+  font-size: 1em;
+  margin: 0 10px 10px 0;
+}
+.resume .content h6 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.5em;
+  text-transform: none;
+  font-weight: normal;
+  font-style: italic;
+  color: var(--third-color);
+  display: inline-block;
+  line-height: 1;
+  padding: 0 0 10px;
+}
+.resume .content span {
+  display: block;
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+  line-height: 1;
+}
+.resume .content p span {
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  color: var(--main-color);
+}
+.resume .content .leaf {
+  width: 50px;
+  margin: 15px auto;
+}
+
+
 /* FOOTER */
 footer {
   background-color: var(--main-darker);
@@ -395,7 +481,6 @@ footer a, footer button {
 }
 footer a:hover, footer button:hover { 
   color: var(--lightest-color);
-  cursor: pointer;
 }
 footer ul li {
   display: inline-block;
