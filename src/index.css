@@ -20,7 +20,7 @@ body {
   font-size: 16px;
   overflow-x: hidden;
 }
-a, button, img, span, li, div, i, h4 { transition: all 0.5s ease-out; }
+a, button, img, span, li, div, i, h4 { transition: all 0.5s ease-in-out; }
 a { text-decoration: none; color: var(--main-color); }
 a:hover { color: var(--third-color); }
 button:hover { cursor: pointer; }
@@ -408,6 +408,20 @@ p.about-text::before {
   flex-grow: 1;
   text-align: center;
 }
+.resume .content p.download {
+  text-align: left;
+  margin: 0 0 20px 0;
+}
+.resume .content p.download a {
+  background-color: var(--third-color);
+  color: var(--second-lighter);
+  padding: 10px;
+  margin: 5px 0 0;
+  display: inline-block;
+}
+.resume .content p.download a:hover {
+  background-color: var(--main-darker);
+}
 .resume .content h4 {
   font-family: 'Hammersmith One', sans-serif;
   text-transform: capitalize;
@@ -418,12 +432,12 @@ p.about-text::before {
   text-align: left;
 }
 .resume .content h4:not(:first-child) { margin-top: 5px; }
-.resume .content div {
+.resume .content .disp {
   background-color: rgba(241,242,235,.2);
   border: 1px solid var(--second-lighter);
-  padding: 15px;
+  padding: 20px;
   margin: 0 0 8px;
-  border-radius: 0 25px;
+  border-radius: 0 20px;
   text-align: left;
 }
 .resume .content h5 { 
@@ -446,15 +460,49 @@ p.about-text::before {
   line-height: 1;
   padding: 0 0 10px;
 }
-.resume .content span {
+.resume .content span.certification {
   display: block;
   font-family: 'Libre Baskerville', serif;
   font-style: italic;
   line-height: 1;
+  margin: 0 0 6px;
 }
 .resume .content p span {
-  font-family: 'Lato', Helvetica, Arial, sans-serif;
   color: var(--main-color);
+}
+.resume .content .skills {
+  overflow: hidden;
+  padding: 10px;
+}
+.resume .content .skl-title button {
+  background: none;
+  border: none;
+  font-size: 1em;
+  margin: 5px;
+}
+.resume .content .skl-title button::before { display: none; }
+.resume .content .skl-title button span {
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  display: inline-block;
+}
+.resume .content .skl-title button i {
+  padding: 0 0 0 8px;
+}
+.resume .content .skl-body {
+  list-style-type: none;
+  overflow: hidden;
+  height: 1px;
+  transition: all 0.3s ease-in-out; 
+}
+.resume .content .skl-body li {
+  margin: 5px;
+}
+.resume .content .skl-body li i {
+  color: var(--main-color);
+  margin-right: 5px;
+  font-size: .9em;
 }
 .resume .content .leaf {
   width: 50px;
@@ -508,6 +556,10 @@ footer .socials a:hover {
   font-size: 0.8em;
   margin-left: 5px;
   color: var(--main-color)
+}
+
+body.stop-transitions * {
+  transition: none !important;
 }
 
 
@@ -648,6 +700,24 @@ footer .socials a:hover {
   }
 }
 
+@media screen and (max-width: 740px) {
+  header .light-base {
+    position: none;
+  }
+  header .light {
+    display: none;
+  }
+  .small-light {
+    display: none;
+  }
+  @keyframes light-move {
+    100% { display: none; }
+  }
+  @keyframes small-lights-move {
+    100% { display: none; }
+  }
+}
+
 /* 600 */
 @media screen and (max-width: 600px) {
   nav {
@@ -675,6 +745,18 @@ footer .socials a:hover {
   #info-1 { grid-column: 2; }
   #info-2 { grid-column: 3; }
   #info-3 { grid-row: 2; grid-column: 2 / 4; margin-top: 0; }
+  .resume .sidebar {
+    padding: 10px 0 0;
+    margin: 0 0 10px;
+    width: 100%;
+    z-index: 2;
+    background-color: var(--lightest-color);
+  }
+  .resume .sidebar li {
+    display: inline-block;
+    margin: 0 5px 0 0;
+  }
+  header .light-base { display: none; }
 }
 
 /* 500 */

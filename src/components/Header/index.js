@@ -8,8 +8,10 @@ function Header({ pages }) {
         return Math.floor(Math.random() * (max - min) + min);
     }
     let lightAmount = [];
-    for (let i = 0; i < randomNum(80, 120); i++) {
-        lightAmount.push(i);
+    if (window.innerWidth > 740) {
+        for (let i = 0; i < randomNum(80, 120); i++) {
+            lightAmount.push(i);
+        }
     }
     
     return(

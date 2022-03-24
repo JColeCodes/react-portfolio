@@ -55,10 +55,31 @@ function Template() {
   );
 }
 
+function delayTransition() {
+  const classes = document.body.classList;
+  let timer = 0;
+  function delay() {
+    if (timer) {
+      clearTimeout(timer);
+      timer = null;
+    }
+    else
+        classes.add('stop-transitions');
+
+    timer = setTimeout(() => {
+        classes.remove('stop-transitions');
+        timer = null;
+    }, 10);
+  }
+  window.addEventListener('resize', delay);
+  window.onload = delay();
+}
+
 function App() {
   return (
     <BrowserRouter>
       <Template />
+      {delayTransition()}
     </BrowserRouter>
   );
 }
