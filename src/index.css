@@ -1,8 +1,8 @@
 :root {
   --main-color: #758a96;
   --second-color: #d3d6c7;
-  --third-color: #5f653d;
-  --main-darker: #3d5461;
+  --third-color: #6F8579;
+  --main-darker: #3E5462;
   --second-lighter: #f1f2eb;
   --lightest-color: #fff;
   --darkest-color: #191e22;
@@ -107,35 +107,6 @@ nav ul li a:hover, nav ul li a.active {
 nav ul li a.active {
   pointer-events: none;
 }
-header .light-base {
-  position: absolute;
-  animation: light-move 30s linear infinite;
-  width: 800px;
-  height: 800px;
-  mix-blend-mode: overlay;
-  top: 0; left: calc(50% - 400px);
-}
-header .light {
-  opacity: .8;
-  border-radius: 50%;
-  width: 400px; height: 400px;
-  filter: blur(150px);
-  position: absolute;
-  display: block;
-}
-header .light-blue {
-  background-color: var(--main-color);
-  top: 0; left: 0;
-}
-header .light-beige {
-  background-color: var(--second-color);
-  bottom: 0; right: 0;
-}
-@keyframes light-move {
-  0% { transform: scale(1.2) rotate(0deg); }
-  50% { transform: scale(1) rotate(180deg); }
-  100% { transform: scale(1.2) rotate(360deg); }
-}
 .small-light {
   position: absolute;
   color: var(--lightest-color);
@@ -147,6 +118,7 @@ header .light-beige {
   width: 100%;
   animation: small-lights-move 45s linear infinite;
 }
+.small-light:hover { cursor: default; }
 @keyframes small-lights-move {
   0% { top: 20vh; opacity: 0; }
   50% { opacity: .9; transform: scale(1.2); }
@@ -392,6 +364,7 @@ p.about-text::before {
 }
 form.contact-form {
   width: 700px; max-width: 100%;
+  padding: 0 15px;
   margin: 0 auto;
 }
 form.contact-form label {
@@ -778,17 +751,8 @@ body.stop-transitions * {
 }
 
 @media screen and (max-width: 740px) {
-  header .light-base {
-    position: none;
-  }
-  header .light {
-    display: none;
-  }
   .small-light {
     display: none;
-  }
-  @keyframes light-move {
-    100% { display: none; }
   }
   @keyframes small-lights-move {
     100% { display: none; }

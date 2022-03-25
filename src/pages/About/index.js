@@ -12,7 +12,7 @@ function About() {
         <section id="about" className="about-me">
             <div className="quick-info">
                 <div className="self-image">
-                    <img src={jcface} alt="Jennifer Cole" />
+                    <img src={jcface} loading="lazy" alt="Jennifer Cole" />
                 </div>
                 {quickInfo.map((info, i) => (
                     <div className="info-box" id={`info-${i + 1}`} key={`info-${i + 1}`}>

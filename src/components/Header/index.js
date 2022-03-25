@@ -8,16 +8,17 @@ function Header({ pages }) {
         return Math.floor(Math.random() * (max - min) + min);
     }
     let lightAmount = [];
-    if (window.innerWidth > 740) {
+    async function createLights() {
         for (let i = 0; i < randomNum(80, 120); i++) {
             lightAmount.push(i);
         }
     }
+    if (window.innerWidth > 740) {
+        createLights();
+    }
     
     return(
         <header>
-            <div className="light-base"><div className="light light-beige"></div></div>
-            <div className="light-base"><div className="light light-blue"></div></div>
             <div id="small-lights">{lightAmount.map((light, i) => (
                 <div className="small-light" key={`light-${i}`}
                     style={{

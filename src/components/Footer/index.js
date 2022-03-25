@@ -7,9 +7,15 @@ function Footer() {
         <footer>
             <div className="foot-info">
                 <div className="socials">
-                    <a href="https://www.linkedin.com/in/jennifer-cole-a9506b163/" target="_blank" rel="noreferrer"><i className="fa-brands fa-linkedin"></i></a>
-                    <a href="https://github.com/JColeCodes" target="_blank" rel="noreferrer"><i className="fa-brands fa-github"></i></a>
-                    <a href="https://www.instagram.com/capauldi/" target="_blank" rel="noreferrer"><i className="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/jennifer-cole-a9506b163/" target="_blank" rel="noreferrer">
+                        <i className="fa-brands fa-linkedin" alt="LinkedIn"></i>
+                    </a>
+                    <a href="https://github.com/JColeCodes" target="_blank" rel="noreferrer">
+                        <i className="fa-brands fa-github" alt="GitHub"></i>
+                    </a>
+                    <a href="https://www.instagram.com/capauldi/" target="_blank" rel="noreferrer">
+                        <i className="fa-brands fa-instagram" alt="Instagram (Personal)"></i>
+                    </a>
                 </div>
                 <ul>
                     <li>ColeCodes.com &copy; 2017-{new Date().getFullYear()}</li>

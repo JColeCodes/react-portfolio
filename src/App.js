@@ -4,10 +4,10 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
-import About from './components/About';
-import Portfolio from './components/Portfolio';
-import Contact from './components/Contact';
-import Resume from './components/Resume';
+import About from './pages/About';
+import Portfolio from './pages/Portfolio';
+import Contact from './pages/Contact';
+import Resume from './pages/Resume';
 
 import { projectInfo } from './assets/project-info';
 
@@ -70,7 +70,7 @@ function delayTransition() {
     timer = setTimeout(() => {
         classes.remove('stop-transitions');
         timer = null;
-    }, 10);
+    }, 1);
   }
   window.addEventListener('resize', delay);
   window.onload = delay();
