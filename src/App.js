@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import About from './components/About';
 import Portfolio from './components/Portfolio';
+import Contact from './components/Contact';
 import Resume from './components/Resume';
 
 import { projectInfo } from './assets/project-info';
@@ -14,7 +15,7 @@ function Template() {
   const pages = [
     { path: '/', title: 'About', Element: About },
     { path: '/portfolio', title: 'Portfolio', Element: Portfolio },
-    { path: '/contact', title: 'Contact', Element: Resume },
+    { path: '/contact', title: 'Contact', Element: Contact },
     { path: '/resume', title: 'Resume', Element: Resume }
   ];
   const location = useLocation();

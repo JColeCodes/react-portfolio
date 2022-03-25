@@ -378,6 +378,80 @@ p.about-text::before {
 }
 
 
+/* CONTACT */
+#contact p {
+  text-align: left;
+  width: 100%;
+  padding: 10px 15px;
+}
+#contact h4 {
+  width: 100%;
+  text-transform: capitalize;
+  font-size: 1.5em;
+  margin: 30px 15px 0;
+}
+form.contact-form {
+  width: 700px; max-width: 100%;
+  margin: 0 auto;
+}
+form.contact-form label {
+  display: block;
+  margin: 15px 0 5px;
+}
+form.contact-form label span.required { color: #C14762; }
+form.contact-form input, form.contact-form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--second-color);
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  color: var(--main-darker);
+}
+form.contact-form textarea {
+  resize: none;
+}
+form.contact-form input:focus, form.contact-form textarea:focus {
+  outline: none;
+  border: 1px solid var(--main-color);
+  box-shadow: 0 0 2px var(--second-lighter);
+}
+form.contact-form button {
+  border: 0;
+  background-color: var(--third-color);
+  padding: 10px;
+  font-size: 1em;
+  color: var(--lightest-color);
+  margin: 10px 0 0;
+  font-weight: bold;
+}
+form.contact-form button:hover {
+  background-color: var(--main-color);
+  border-radius: 10px 0;
+}
+#contact ul {
+  list-style-type: none;
+  text-align: left;
+  width: 100%;
+  margin: 5px 15px;
+}
+#contact ul li {
+  display: inline-block;
+}
+#contact ul li a {
+  background-color: var(--main-darker);
+  color: var(--lightest-color);
+  padding: 8px;
+  margin: 0 5px 5px 0;
+  display: block;
+}
+#contact ul li a:hover {
+  background-color: var(--third-color);
+  color: var(--second-lighter);
+  border-radius: 0 10px;
+}
+#contact ul li i { font-size: 1.2em; }
+
+
 /* RESUME */
 .resume {
   display: flex;
@@ -404,6 +478,7 @@ p.about-text::before {
   color: var(--main-darker);
   border-bottom: 5px solid var(--second-color);
 }
+.resume .sidebar button:hover { border-bottom-color: var(--main-color); }
 .resume .content {
   flex-grow: 1;
   text-align: center;
@@ -469,6 +544,8 @@ p.about-text::before {
 }
 .resume .content p span {
   color: var(--main-color);
+  display: block;
+  font-style: italic;
 }
 .resume .content .skills {
   overflow: hidden;
