@@ -1,21 +1,12 @@
 import React from 'react';
+import Project from '../../components/Project';
 
 function Portfolio({ projects, title }) {
     return(
         <section className="portfolio-boxes">
             <h3>{title}</h3>
             {projects.map(project => (
-                <div className="portfolio-box" key={project.title}>
-                    <img src={require(`../../assets/images/portfolio/${project.thumbnail}`)} alt={`${project.title}`} />
-                    <div className="portfolio-overlay"></div>
-                    <div className="portfolio-text">
-                        <h4>
-                            <a href={`${project.url}`} target="_blank" rel="noreferrer">{project.title} <i className="fa-solid fa-link"></i></a> 
-                            <a href={`${project.repo}`} target="_blank" rel="noreferrer"><i className="fa-brands fa-github gh-link"></i></a>
-                        </h4>
-                        <p>{project.technologies.map(tech => (<span key={tech}>{tech}</span>))}</p>
-                    </div>
-                </div>
+                <Project project={project} key={project.title} />
             ))}
         </section>
     );
