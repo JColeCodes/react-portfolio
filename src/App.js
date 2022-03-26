@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import Header from './components/Header';
@@ -78,10 +78,10 @@ function delayTransition() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Template />
       {delayTransition()}
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
