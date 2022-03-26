@@ -430,6 +430,13 @@ form.contact-form button:hover {
   font-style: italic;
 }
 #contact .error::first-letter { text-transform: uppercase; }
+#contact .send-confirm {
+  padding: 10px 0;
+  font-size: 1.2em;
+  color: var(--main-color);
+  font-family: 'Hammersmith One', sans-serif;
+  text-transform: uppercase;
+}
 
 
 /* RESUME */
