@@ -1,0 +1,15 @@
+{
+  "short_name": "Cole Codes - Portfolio for Jennifer Cole",
+  "name": "Cole Codes",
+  "icons": [
+    {
+      "src": "ccblue.png",
+      "sizes": "400x400",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#758a96"
+}

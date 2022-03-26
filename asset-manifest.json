@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/react-portfolio/static/css/main.d90e80cd.css",
+    "main.js": "/react-portfolio/static/js/main.2cb7744f.js",
+    "static/js/787.a2cb61a6.chunk.js": "/react-portfolio/static/js/787.a2cb61a6.chunk.js",
+    "static/media/TechBlog.png": "/react-portfolio/static/media/TechBlog.c369a45d9c03b14eebd1.png",
+    "static/media/header.jpg": "/react-portfolio/static/media/header.8ae4ec75c7db5b4b51e1.jpg",
+    "static/media/WeatherDashboard.jpg": "/react-portfolio/static/media/WeatherDashboard.6e8cf4d9ad90995d7493.jpg",
+    "static/media/Randm.jpg": "/react-portfolio/static/media/Randm.1a5475008b694bdea527.jpg",
+    "static/media/TravelItinerary.jpg": "/react-portfolio/static/media/TravelItinerary.971f3a28ec255c4fcaa4.jpg",
+    "static/media/TeamProfileGenerator.jpg": "/react-portfolio/static/media/TeamProfileGenerator.e82e25b8e20ae38d7376.jpg",
+    "static/media/CodeQuiz.gif": "/react-portfolio/static/media/CodeQuiz.9b50935f1c692d768cc4.gif",
+    "static/media/jcface.jpg": "/react-portfolio/static/media/jcface.eb8b1f7d330e64f02d67.jpg",
+    "static/media/leaf-blue.png": "/react-portfolio/static/media/leaf-blue.c86b1e3f326b584c5ff6.png",
+    "static/media/leaf-beige.png": "/react-portfolio/static/media/leaf-beige.cca4639d24992f6e7c1a.png",
+    "index.html": "/react-portfolio/index.html",
+    "main.d90e80cd.css.map": "/react-portfolio/static/css/main.d90e80cd.css.map",
+    "main.2cb7744f.js.map": "/react-portfolio/static/js/main.2cb7744f.js.map",
+    "787.a2cb61a6.chunk.js.map": "/react-portfolio/static/js/787.a2cb61a6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d90e80cd.css",
+    "static/js/main.2cb7744f.js"
+  ]
+}
