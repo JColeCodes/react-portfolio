@@ -7,6 +7,13 @@ export const projectInfo = [
         url: 'https://ran-dm.herokuapp.com/'
     },
     {
+        title: 'Happy Harvesters',
+        technologies: ["Node.js", "React", "MongoDB", "Mongoose", "Express", "GraphQL", "Apollo", "CSS"],
+        thumbnail: 'HappyHarvesters.png',
+        repo: 'https://github.com/JColeCodes/happy-harvesters',
+        url: 'https://happy-harvesters.herokuapp.com/'
+    },
+    {
         title: 'Tech Blog',
         technologies: ["Node.js", "MySQL", "Express", "Handlebars", "Sequelize", "REST API", "CSS"],
         thumbnail: 'TechBlog.png',
@@ -26,13 +33,6 @@ export const projectInfo = [
         thumbnail: 'WeatherDashboard.jpg',
         repo: 'https://github.com/JColeCodes/climate-checker',
         url: 'https://jcolecodes.github.io/climate-checker/'
-    },
-    {
-        title: 'Code Quiz',
-        technologies: ["Javascript", "DOM", "CSS"],
-        thumbnail: 'CodeQuiz.gif',
-        repo: 'https://github.com/JColeCodes/program-exam',
-        url: 'https://jcolecodes.github.io/program-exam/'
     },
     {
         title: 'Team Profile Generator',
