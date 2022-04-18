@@ -11,7 +11,7 @@ export const projectInfo = [
         technologies: ["Node.js", "React", "MongoDB", "Mongoose", "Express", "GraphQL", "Apollo", "CSS"],
         thumbnail: 'HappyHarvesters.png',
         repo: 'https://github.com/JColeCodes/happy-harvesters',
-        url: 'https://happy-harvesters.herokuapp.com/'
+        url: 'https://happyharvesters.herokuapp.com/'
     },
     {
         title: 'Tech Blog',
